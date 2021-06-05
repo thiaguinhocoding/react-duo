@@ -12,6 +12,17 @@ module.exports = {
         template: path.join(publicDir, 'index.html') 
       }
     )
-  ]
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader'
+        }
+      }
+    ]
+  }
 };
 
